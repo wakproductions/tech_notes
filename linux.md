@@ -229,3 +229,11 @@ ssh -L local_port:remote_address:remote_port username@server.com
 # Bash
 
 `set -x` - sets up a mode to display all commands in the script to terminal
+
+## Tail a log file
+
+
+Tail in follow mode (`-f`) for 50 lines
+```
+tail -f -n 50
+```
