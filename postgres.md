@@ -183,7 +183,11 @@ On a clean install you gotta run `createdb` on the terminal after you do `brew i
 
 This will restore from the pg_dump created by a command like the following. `-F d` specifies "directory" format, the `-j 4` means build it with 4 threads.
 ```
-pg_dump -h localhost -F d -j 4 -U master tpg_production -f  tpg_production
+pg_dump -h localhost -F d -j 4 -U master tpg_production -f tpg_production
+```
+To build a sql file:
+```
+pg_dump -h localhost -p 5432 -a rics_channels_development > rics_channels_development_20180728.sql
 ```
 
 ```
@@ -193,15 +197,10 @@ pg_restore -h localhost -p 5432 -d tpg_development tpg_production_20170814
 
 ## Copy one database to another
 
-In psql:
-```
-```
-
 In command line:
 ```
 pg_dump -h localhost -p 5432 -a rics_channels_development | psql rics_adapter_development
 ```
-
 
 ## More
 ```

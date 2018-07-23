@@ -1,6 +1,22 @@
-## File System
+# Linux Cheat Sheet
 
-### `chmod` & `chown`
+## User Management ##
+
+### Group Management
+
+Add existing user tony to ftp supplementary/secondary group with the usermod command using the -a option ~ i.e. add the user to the supplemental group(s). Use only with -G option:
+```
+usermod -a -G ftp tony
+```
+
+In this example, change tony user’s primary group to www, enter:
+```
+usermod -g www tony
+```
+
+## File Operations ##
+
+### Permissions with `chmod` & `chown`
 chmod: 1=x, 2=w, 4=r
 
 chmod (user)(group)(other)
@@ -31,7 +47,7 @@ delta-ironhammer-rails (develop)$ cat .ruby-version
 truncate -s 0 myfile.txt
 ```
 
-## Search
+### Search for text
 
 [How to search text files for specific text](http://stackoverflow.com/questions/16956810/how-to-find-all-files-containing-specific-text-on-linux)
 
@@ -39,7 +55,50 @@ truncate -s 0 myfile.txt
 grep -rnw '/path/to/somewhere/' -e "pattern"
 ```
 
-## Disk Space Usage
+### Tail a log file
+
+
+Tail in follow mode (`-f`) for 50 lines
+```
+tail -f -n 50
+```
+
+### Symbolic links `ln`
+
+Create symbolic link:
+```
+ln -s [TARGET DIRECTORY OR FILE] ./[SHORTCUT]
+
+-sfv switch commonly used:
+-b, --backup[=Control]: Backup each existing destination file
+
+-d, -F, --directory: Hard link directories (super-user only)
+-f, --Force: Remove existing destination file(s)
+-n, --no-dereference: Treat destination that is a symlink to a directory as if it were a normal file.
+-i, --interactive: Prompt whether to remove destinations
+-s, --symbolic: Make symbolic links instead of hard links -S [suffix], --suffix=[Suffix]: Override the usual backup suffix. See below
+-target-directory=[directory]: Specify the directory in which to create the links.
+-v, --verbose: Print name of each file before linking.
+```
+
+## Copy file remotely using `scp`
+
+```
+scp <file_source> <file_dest>
+scp /mnt/mysql/dump/fi_app_metadata.sql ~/Development/fi_app_metadata.sql
+```
+
+To get a file from remote to local (from local terminal):
+```
+$ scp ubuntu@fidb-staging:/mnt/mysql/dump/*_20170320.sql /Users/wkotzan/Development/
+banks_20170320.sql                                                                                                                          100% 2035KB   2.0MB/s   00:01    
+sites_20170320.sql                                                                                                                          100% 4458KB   2.2MB/s   00:02 
+```
+
+
+## Disk Operations ##
+
+### Get Disk Space Usage - size
 
 [Find the size of a given subdirectory.](http://unix.stackexchange.com/questions/185764/how-do-i-get-the-size-of-a-directory-on-the-command-line)
 [Using du to find troublesome directories](http://unix.stackexchange.com/questions/125429/tracking-down-where-disk-space-has-gone-on-linux
@@ -87,7 +146,6 @@ Development$ du -sh ./* | sort -nr
 
 ```
 
-
 Alternative method:
 ```
 $ df -h
@@ -130,50 +188,48 @@ $ sudo mount /dev/xvdb /pgdata
 ```
 
 
-### Symbolic links `ln`
+## Processes ##
 
-Create symbolic link:
-```
-ln -s [TARGET DIRECTORY OR FILE] ./[SHORTCUT]
-
--sfv switch commonly used:
--b, --backup[=Control]: Backup each existing destination file
-
--d, -F, --directory: Hard link directories (super-user only)
--f, --Force: Remove existing destination file(s)
--n, --no-dereference: Treat destination that is a symlink to a directory as if it were a normal file.
--i, --interactive: Prompt whether to remove destinations
--s, --symbolic: Make symbolic links instead of hard links -S [suffix], --suffix=[Suffix]: Override the usual backup suffix. See below
--target-directory=[directory]: Specify the directory in which to create the links.
--v, --verbose: Print name of each file before linking.
-```
-
-## Processes
-
-View all background tasks:
+## View all background tasks
 ```
 ps -ef
-
 ps -ax | grep <application name>
 ```
 
-### Kill Process
-`pkill` kills processes by name
+### Kill Process By Name (Linux)
 ```
 pkill -f processname
 ```
 
-### Kill Process on the Mac
-
+### Kill Process (Mac)
 ```
 kill -9 <pid>
 ```
+
+
+## Network Operations ##
 
 ### Netcat
 
 Echo curl request header & body without sending it?
 ```
 nc -l localhost 8000
+```
+
+### Get network stats using `nstat`
+
+https://loicpefferkorn.net/2016/03/linux-network-metrics-why-you-should-use-nstat-instead-of-netstat/
+
+Port scan using `nmap`
+
+https://www.digitalocean.com/community/tutorials/how-to-use-nmap-to-scan-for-open-ports-on-your-vps
+
+### [Get the external IP address](https://www.cyberciti.biz/faq/how-to-find-my-public-ip-address-from-command-line-on-a-linux/)
+
+```
+dig +short myip.opendns.com @resolver1.opendns.com
+-or-
+dig TXT +short o-o.myaddr.l.google.com @ns1.google.com
 ```
 
 ### Check ports being listened on
@@ -188,52 +244,12 @@ tcp6       0      0 :::3030                 :::*                    LISTEN
 tcp6       0      0 :::22                   :::*                    LISTEN     
 ```
 
-## User Management
-
-### Group Management
-
-Add existing user tony to ftp supplementary/secondary group with the usermod command using the -a option ~ i.e. add the user to the supplemental group(s). Use only with -G option:
-```
-usermod -a -G ftp tony
-```
-
-In this example, change tony user’s primary group to www, enter:
-```
-usermod -g www tony
-```
-
-## Copy files using `scp`
-
-```
-scp <file_source> <file_dest>
-scp /mnt/mysql/dump/fi_app_metadata.sql ~/Development/fi_app_metadata.sql
-```
-
-To get a file from remote to local (from local terminal):
-```
-$ scp ubuntu@fidb-staging:/mnt/mysql/dump/*_20170320.sql /Users/wkotzan/Development/
-banks_20170320.sql                                                                                                                          100% 2035KB   2.0MB/s   00:01    
-sites_20170320.sql                                                                                                                          100% 4458KB   2.2MB/s   00:02 
-```
-
-## Port tunneling
+### Port tunneling
 
 [3 methods to SSH tunnel](https://www.howtogeek.com/168145/how-to-use-ssh-tunneling/)
 
-### Method 1: local port forwarding
+#### Method 1: local port forwarding
 
 ```
 ssh -L local_port:remote_address:remote_port username@server.com
-```
-
-# Bash
-
-`set -x` - sets up a mode to display all commands in the script to terminal
-
-## Tail a log file
-
-
-Tail in follow mode (`-f`) for 50 lines
-```
-tail -f -n 50
 ```
