@@ -222,6 +222,8 @@ https://loicpefferkorn.net/2016/03/linux-network-metrics-why-you-should-use-nsta
 
 Port scan using `nmap`
 
+`nmap <hostname>`
+
 https://www.digitalocean.com/community/tutorials/how-to-use-nmap-to-scan-for-open-ports-on-your-vps
 
 ### [Get the external IP address](https://www.cyberciti.biz/faq/how-to-find-my-public-ip-address-from-command-line-on-a-linux/)
