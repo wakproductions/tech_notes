@@ -4,6 +4,12 @@
 sudo service postgresql restart
 ```
 
+## Create database
+
+```
+createdb -U <user> <dbname>
+```
+
 ## Show databases
 
 ```
