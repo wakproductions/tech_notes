@@ -1,5 +1,77 @@
 # Linux Cheat Sheet
 
+## Setting Up a New Server ##
+
+https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
+
+When you set up an initial instance of Linux, there's a default user (usually `root`) under which you can log in using
+an initial password. Steps to setup:
+
+1. Change root password
+```
+sudo passwd root
+```
+
+2. Create new user for login with root privileges. -aG sudo appends the group sudo to <newuser> making it a superuser
+
+```
+adduser <newuser>
+usermod -aG sudo <newuser>
+```
+
+3. Create a user for running applications (not with sudo privileges)
+4. Install public key for logging on
+```
+(on local machine)
+cat ~/.ssh/id_rsa.pub
+
+(on remote machine as root)
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+vim ~/.ssh/authorized_keys
+
+<paste the key>
+```
+
+
+5. Firewall setup 
+
+6. Disable Apache
+
+Apache was enabled by default on the server I created. To disable from booting.
+```
+sudo update-rc.d apache2 disable
+
+or
+
+sudo update-rc.d -f  apache2 remove
+```
+
+https://askubuntu.com/questions/170640/how-to-disable-apache2-server-from-auto-starting-on-boot
+
+> Under the folder /etc/init.d/ you will find all the init scripts for different boot up services, like apache2, networking, etc.
+>
+> Depending on which runlevel the computer starts in, different services are started. So from the /etc/init.d/ folder each "service" is linked to one/many/no run level folders named from rc0.d to rc6.d
+
+To just stop Apache:
+```
+sudo systemctl stop apache2.service
+```
+
+### Install NGINX to proxy SSL
+
+https://mediatemple.net/community/products/developer/204405534/install-nginx-on-ubuntu
+```
+sudo apt-get nginx
+sudo /etc/init.d/nginx start
+```
+
+### Installing SSL
+
+```
+
+``` 
+
 ## User Management ##
 
 ### Group Management
@@ -12,6 +84,16 @@ usermod -a -G ftp tony
 In this example, change tony user’s primary group to www, enter:
 ```
 usermod -g www tony
+```
+
+### Switch to Root
+
+```
+sudo -s
+
+or
+
+su -
 ```
 
 ## File Operations ##
