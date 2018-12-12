@@ -4,6 +4,35 @@
 sudo service postgresql restart
 ```
 
+Using Brew: `brew services start postgresql`
+
+## Postgres not starting - how to recover
+https://stackoverflow.com/questions/7975556/how-to-start-postgresql-server-on-mac-os-x
+https://coderwall.com/p/zf-fww/postgres-on-osx-with-homebrew-not-running-after-osx-crash
+
+Start manually (may or may not work):
+
+```
+pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+```
+Check the log:
+```
+tail -f /usr/local/var/postgres/server.log
+```
+
+Delete the PID file:
+```
+rm /usr/local/var/postgres/postmaster.pid
+```
+
+Start manually again
+
+Check process:
+```
+ps aux | grep postgres
+```
+
+
 ## Show databases
 
 ```
