@@ -33,6 +33,12 @@ ps aux | grep postgres
 ```
 
 
+## Create database
+
+```
+createdb -U <user> <dbname>
+```
+
 ## Show databases
 
 ```
