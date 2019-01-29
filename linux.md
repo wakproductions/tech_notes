@@ -255,3 +255,12 @@ tcp6       0      0 :::22                   :::*                    LISTEN
 ```
 ssh -L local_port:remote_address:remote_port username@server.com
 ```
+
+## Services ##
+
+### systemctl
+
+Get list of processes
+```
+systemctl list-unit-files | grep enabled
+```
