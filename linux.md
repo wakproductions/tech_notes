@@ -137,6 +137,8 @@ truncate -s 0 myfile.txt
 grep -rnw '/path/to/somewhere/' -e "pattern"
 ```
 
+To search a text file, use `zgrep`
+
 ### Tail a log file
 
 
