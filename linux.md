@@ -137,7 +137,9 @@ truncate -s 0 myfile.txt
 grep -rnw '/path/to/somewhere/' -e "pattern"
 ```
 
-To search a text file, use `zgrep`
+To search a compressed text file, use `zgrep`
+
+```zgrep a7505707-1224-483b-93f9-aa150175fd8b *```
 
 ### Tail a log file
 
