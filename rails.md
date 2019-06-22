@@ -24,3 +24,15 @@ ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 
 http://viedma.tumblr.com/post/37155305475/ruby-global-variables
+
+## Nokogiri install on the mac
+
+`gem install nokogiri -- --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/libxml2 --use-system-libraries`
+
+## Regex
+
+https://bneijt.nl/pr/ruby-regular-expressions/
+
+## Convert Float to String with 2 Decimal Places
+
+'%.2f' % number

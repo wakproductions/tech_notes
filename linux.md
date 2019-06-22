@@ -86,6 +86,29 @@ In this example, change tony user’s primary group to www, enter:
 usermod -g www tony
 ```
 
+#### On Mac
+
+Delete user from group
+```
+sudo dseditgroup -o edit -d $username -t user $groupname
+```
+
+Add user to group
+```
+sudo dseditgroup -o edit -a $username -t user $groupname
+```
+
+List members in group
+```
+ dscacheutil -q group -a name _www 
+```
+
+List groups of user
+```
+id -Gn  $username
+```
+
+
 ### Switch to Root
 
 ```
@@ -140,6 +163,10 @@ grep -rnw '/path/to/somewhere/' -e "pattern"
 ### Search for file
 
 `find /dir/path/look/up -name "pattern"`
+
+To search a compressed text file, use `zgrep`
+
+```zgrep a7505707-1224-483b-93f9-aa150175fd8b *```
 
 ### Tail a log file
 

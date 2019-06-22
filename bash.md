@@ -1,6 +1,6 @@
 # Bash
 
-`set -x` - sets up a mode to display all commands in the script to terminal
+`set -x` or `set -v` - sets up a mode to display all commands in the script to terminal
 
 
 ### If and file test operators
@@ -24,4 +24,11 @@ INTEGER1 -lt INTEGER2	INTEGER1 is numerically less than INTEGER2
 -s FILE	FILE exists and it's size is greater than zero (ie. it is not empty).
 -w FILE	FILE exists and the write permission is granted.
 -x FILE	FILE exists and the execute permission is granted.
+```
+
+#### if option exists
+
+./myscript.sh
+```
+
 ```
