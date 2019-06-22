@@ -137,6 +137,10 @@ truncate -s 0 myfile.txt
 grep -rnw '/path/to/somewhere/' -e "pattern"
 ```
 
+### Search for file
+
+`find /dir/path/look/up -name "pattern"`
+
 ### Tail a log file
 
 
@@ -346,3 +350,7 @@ Get list of processes
 ```
 systemctl list-unit-files | grep enabled
 ```
+
+## IP Tables ##
+
+In a default configuration ports are closed. Need to use `iptables` firewall utility to open the ports.
