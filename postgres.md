@@ -39,6 +39,12 @@ ps aux | grep postgres
 createdb -U <user> <dbname>
 ```
 
+## Rename database
+
+```
+ALTER DATABASE "old_dbname" RENAME TO "new_dbname"
+```
+
 ## Show databases
 
 ```
