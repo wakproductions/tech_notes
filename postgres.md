@@ -243,6 +243,10 @@ In command line:
 pg_dump -h localhost -p 5432 -a rics_channels_development | psql rics_adapter_development
 ```
 
+## Search array type
+
+```SELECT * FROM sal_emp WHERE 10000 = ANY (pay_by_quarter);```
+
 ## More
 ```
 -- show running queries (pre 9.2)
