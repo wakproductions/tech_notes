@@ -16,3 +16,10 @@ Examples:
 ffmpeg -y -ss 30 -t 3 -i demo-description-override.mov -vf fps=10,scale=320:-1:flags=lanczos,palettegen palette.png
 ffmpeg -i demo-description-override.mov -i palette.png -filter_complex "fps=10,scale=640:-1:flags=lanczos[x];[x][1:v]paletteuse" output.gif
 ```
+
+# Youtube-dl
+
+### Recode video
+```
+youtube-dl --recode-video mp4 <url>
+```
