@@ -237,6 +237,15 @@ In command line:
 pg_dump -h localhost -p 5432 -a rics_channels_development | psql rics_adapter_development
 ```
 
+
+## User manipulations
+
+Edit user for login: `ALTER ROLE "railsapp" WITH LOGIN;`
+Remove password requirement: `ALTER ROLE railsapp password null;`
+See user's roles: `\du`
+
+
+
 ## More
 ```
 -- show running queries (pre 9.2)

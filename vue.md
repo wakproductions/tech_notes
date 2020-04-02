@@ -6,8 +6,20 @@ Doing it using vue-cli tools.
 yarn serve
 ```
 
+# Shortcuts
 
-### Action vs Mutation
+```
+v-bind:attribute="" -> :attribute=""
+
+:[dynamicAttributeName]=""
+```
+
+```
+v-on:click="doSomething -> @click="doSomething
+```
+
+
+### Vuex Action vs Mutation
 
 https://stackoverflow.com/questions/39299042/vuex-action-vs-mutations
 
