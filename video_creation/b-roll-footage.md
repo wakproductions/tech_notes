@@ -19,6 +19,7 @@
 * [Music For Youtube](https://www.youtube.com/channel/UCoykp4ZLn9Z0EmVILF1iGFg)
 * [NCM Music Ender Guney 2](https://www.youtube.com/channel/UCP5hreKAzS3h2QNjFO-QPyA/playlists)
 * [Y Hsu](https://www.youtube.com/channel/UCAFTeXfdxp4wvOj87ZrQC4w)
+* [Plasma3 Remixes](https://www.youtube.com/channel/UCeckoTTiXEbqnwISpNTYzkg)
 
 **Individual Channels With Public Domain Footage**
 https://www.youtube.com/user/915855

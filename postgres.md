@@ -39,6 +39,12 @@ ps aux | grep postgres
 createdb -U <user> <dbname>
 ```
 
+## Rename database
+
+```
+ALTER DATABASE "old_dbname" RENAME TO "new_dbname"
+```
+
 ## Show databases
 
 ```
@@ -245,6 +251,9 @@ Remove password requirement: `ALTER ROLE railsapp password null;`
 See user's roles: `\du`
 
 
+## Search array type
+
+```SELECT * FROM sal_emp WHERE 10000 = ANY (pay_by_quarter);```
 
 ## More
 ```

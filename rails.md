@@ -36,3 +36,16 @@ https://bneijt.nl/pr/ruby-regular-expressions/
 ## Convert Float to String with 2 Decimal Places
 
 '%.2f' % number
+
+## Pretty Print
+
+Hash:
+```
+require 'pp'
+pp myhash
+```
+
+JSON:
+```
+JSON.pretty_generate(my_hash_or_array)
+```
