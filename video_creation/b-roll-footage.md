@@ -31,6 +31,10 @@ https://www.youtube.com/user/915855
 * [No Copyright Videos](https://www.youtube.com/channel/UC1Zo19_zMXe8tmvf9yM0nFw)
 
 
+**VideoEffects**
+* https://www.youtube.com/playlist?list=PLA9SBfZWHATXFXqcYDuPVKG-DOEiY9AFP
+
+
 **Pay Sites**
 * www.publicdomainfootage.com
 * pond5.net

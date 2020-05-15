@@ -381,3 +381,7 @@ systemctl list-unit-files | grep enabled
 ## IP Tables ##
 
 In a default configuration ports are closed. Need to use `iptables` firewall utility to open the ports.
+
+## Do an operation on loop ##
+
+`for i in `seq 10`; do dc exec backend bundle exec rspec spec/services/calculator_service/calculate_work_order_spec.rb; done`
