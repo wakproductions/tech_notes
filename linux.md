@@ -19,6 +19,11 @@ adduser <newuser>
 usermod -aG sudo <newuser>
 ```
 
+To view users in group:
+```
+grep <groupname> /etc/group
+```
+
 3. Create a user for running applications (not with sudo privileges)
 4. Install public key for logging on
 ```
