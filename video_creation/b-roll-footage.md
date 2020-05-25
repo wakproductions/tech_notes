@@ -33,6 +33,7 @@ https://www.youtube.com/user/915855
 
 **VideoEffects**
 * https://www.youtube.com/playlist?list=PLA9SBfZWHATXFXqcYDuPVKG-DOEiY9AFP
+* [Beeple Crap](https://www.youtube.com/beeple)
 
 
 **Pay Sites**
