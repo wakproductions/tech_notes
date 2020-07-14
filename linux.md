@@ -305,6 +305,10 @@ $ sudo mkfs -t ext4 /dev/xvdb
 $ sudo mount /dev/xvdb /pgdata
 ```
 
+### Find files containing text
+
+`find /etc -type f -print | xargs grep "DocumentRoot"`
+
 
 ## Processes ##
 
