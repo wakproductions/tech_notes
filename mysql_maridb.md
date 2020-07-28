@@ -31,3 +31,6 @@ GRANT ALL ON mydatabase.* TO 'your_mysql_name'@'your_client_host';
 
 See the current database
 `select database();`
+
+Dump the schema
+`mysqldump -u root -p --no-data dbname > schema.sql`
