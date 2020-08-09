@@ -63,6 +63,17 @@ To just stop Apache:
 sudo systemctl stop apache2.service
 ```
 
+## Check Linux Version
+
+Debian (any of the following):
+```
+cat /etc/issue
+cat /etc/debain_version
+cat /etc/os-release
+```
+
+
+
 ### Install NGINX to proxy SSL
 
 https://mediatemple.net/community/products/developer/204405534/install-nginx-on-ubuntu
