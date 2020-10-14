@@ -1,5 +1,25 @@
 # Linux Cheat Sheet
 
+## Command line shortcuts ##
+
+[Bash Shortcuts](https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/#:~:text=Ctrl%2BL%3A%20Clear%20the%20screen,command%20itself%20with%20Ctrl%2BC.)
+
+* `Ctrl + L` - clear the screen
+* `Ctrl + S` / `Ctrl + Q` - stop/resume output to the screen
+
+Navigating words/lines
+* `Ctrl + A` - go to beginning of line
+* `Ctrl + E` - go to end of line
+* `Ctrl + F` / `Alt + F` - move forward/back one word
+* `Alt + D` - remove all characters after the cursor on current line
+
+Clipboard
+* `Ctrl + W` - cut word before cursor and add to clipboard
+* `Ctrl + K` - Cut line after cursor
+* `Ctrl + U` - Cut line before cursor
+* `Ctrl + Y` - Paste
+
+
 ## Setting Up a New Server ##
 
 https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
@@ -81,12 +101,6 @@ https://mediatemple.net/community/products/developer/204405534/install-nginx-on-
 sudo apt-get nginx
 sudo /etc/init.d/nginx start
 ```
-
-### Installing SSL
-
-```
-
-``` 
 
 ## User Management ##
 
