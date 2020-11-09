@@ -39,10 +39,17 @@ adduser <newuser>
 usermod -aG sudo <newuser>
 ```
 
+(To create a home dir and login profile for that user you can do, without -p you can set password `sudo passwd <username>`)
+```
+sudo useradd -m <username> -p <password>
+```
+
 To view users in group:
 ```
 grep <groupname> /etc/group
 ```
+
+You can create a new group by doing `sudo groupadd <groupname>`
 
 3. Create a user for running applications (not with sudo privileges)
 4. Install public key for logging on
