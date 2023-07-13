@@ -17,3 +17,11 @@ To do whole file: `%s/thisstring/thatstring/g`
 4. Press d to cut (or y to copy).
 5. Move to where you would like to paste.
 6. Press P to paste before the cursor, or p to paste after.
+
+# Delete all lines
+
+```
+Esc + gg + dG
+
+can be undone with 'u'
+```

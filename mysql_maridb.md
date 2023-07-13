@@ -34,3 +34,6 @@ See the current database
 
 Dump the schema
 `mysqldump -u root -p --no-data dbname > schema.sql`
+
+Load the scema
+`mysql -u root -p `

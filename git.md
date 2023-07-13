@@ -7,3 +7,7 @@ https://medium.com/@tahteche/how-git-treats-changes-in-file-permissions-f71874ca
 ```
 git config core.fileMode false
 ```
+
+# Fix Github host problem
+
+`ssh-keygen -R <ip address>`

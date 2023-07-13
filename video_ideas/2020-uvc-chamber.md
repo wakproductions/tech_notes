@@ -1,1 +1,0 @@
-https://www.lincolntech.edu/news/skilled-trades/hvac/separating-fact-from-myth-on-hvac-uv-light-benefits

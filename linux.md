@@ -1,5 +1,18 @@
 # Linux Cheat Sheet
 
+## Winston's New Server Setup Process ##
+* Create new user (i.e. deploy)
+* SSH key for deploy from Github on deploy user
+* Add login SSH key
+* Set up terminal scripts on new user (.bashrc) - usually can skip this
+* Install Docker
+  - Configure docker to run without sudo required https://docs.docker.com/engine/install/linux-postinstall/
+  - Install networks and volumes 
+* Install NGINX
+  - https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
+  - Note, not using UFW because iptables is sufficient
+
+
 ## Command line shortcuts ##
 
 [Bash Shortcuts](https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/#:~:text=Ctrl%2BL%3A%20Clear%20the%20screen,command%20itself%20with%20Ctrl%2BC.)
@@ -257,6 +270,9 @@ $ du -sh app
 120K	app
 $ du -sh log
  82M	log
+ 
+$ du -sh * 
+ 
 ```
 ```
 $ ncdu
@@ -316,6 +332,23 @@ none            100M     0  100M   0% /run/user
 $ du -sh ./
 ```
 
+
+```bash
+du -d 1 | sort -n
+4       ./Foredettinghelgen
+4       ./newitpdesign
+12      ./fried-mugshots
+44      ./IssueTrackerBlogInterface
+52      ./levenstein
+900     ./Example-Receipts
+1856    ./IssueTrackerProduct
+2140    ./ies4linux-2.0.5
+4528    ./i18nextract-sa
+4796    ./photoresizing
+4872    ./pyexcelerator
+70392   ./databases
+544608  .
+```
 ### Disk drives
 
 `/etc/fstab` - file with the drive mounts
@@ -400,6 +433,8 @@ tcp6       0      0 :::3030                 :::*                    LISTEN
 tcp6       0      0 :::22                   :::*                    LISTEN     
 ```
 
+`netstat -tulpn`
+
 ### Port tunneling
 
 [3 methods to SSH tunnel](https://www.howtogeek.com/168145/how-to-use-ssh-tunneling/)
@@ -426,3 +461,67 @@ In a default configuration ports are closed. Need to use `iptables` firewall uti
 ## Do an operation on loop ##
 
 `for i in `seq 10`; do dc exec backend bundle exec rspec spec/services/calculator_service/calculate_work_order_spec.rb; done`
+
+# awk
+
+
+
+## CRLF Correction ##
+
+`dos2unix` and `unix2dos` commands
+
+
+## Memory Management ##
+
+See how much memory is being utilized:
+```
+$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:           50Gi       2.1Gi       2.0Gi       471Mi        46Gi        47Gi
+```
+
+
+# Bash Brackets Reference
+
+https://dev.to/rpalo/bash-brackets-quick-reference-4eh6
+
+# Echo a Timestamp
+
+`echo $(date +'%m/%d/%Y')`
+
+
+# Cron log file at
+`/var/log/syslog`
+
+
+# WSL Compact Drives
+
+```
+Optimize-VHD "C:\Users\Winston Kotzan\AppData\Local\Docker\wsl\data\ext4.vhdx"
+Optimize-VHD "C:\Users\Winston Kotzan\AppData\Local\Packages\TheDebianProject.DebianGNULinux_76v4gfsz19hv4\LocalState\ext4.vhdx"
+```
+
+# Generate SSH Keys
+
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+```
+ssh-keygen -t ed25519 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+# Set Linux Time Zone
+
+Change the symlink `/etc/timezone`
+
+```
+sudo timedatectl set-timezone America/New_York
+date
+```
+
+
+# Ionos
+
+Logical Volume Mapping Explained
+https://www.ionos.com/help/server-cloud-infrastructure/server-administration/customise-logical-volume-after-enlarging-the-ssd/logical-volume-manager-lvm-basics/
+

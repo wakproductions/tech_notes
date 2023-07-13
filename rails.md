@@ -3,6 +3,16 @@
 ```ruby
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 ```
+## How to find Rails process ID to kill it
+
+```
+stonknotes (main)$ lsof -i :3666
+COMMAND PID    USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+ruby    702 wkotzan   14u  IPv6 1841179      0t0  TCP ip6-localhost:3666->ip6-localhost:33056 (ESTABLISHED)
+
+$ kill -9 702
+```
+
 
 
 ## Ruby $ global variables
@@ -49,3 +59,11 @@ JSON:
 ```
 JSON.pretty_generate(my_hash_or_array)
 ```
+
+# Hotwire Resources
+
+[GoRails - How to use Hotwire](https://www.youtube.com/watch?v=Qp6sxgjA-xY&feature=emb_logo)
+
+# Url Helpers
+
+`Rails.application.routes.url_helpers.users_path`

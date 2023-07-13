@@ -31,3 +31,16 @@ function convert1080p {
   ffmpeg -i $1 -s hd1080 -c:v libx264 -crf 23 -c:a aac -strict -2 $1_1080p.mp4
 }
 `
+
+# Take subsegment of video clip
+
+```
+ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -t 00:00:10.0 output.wmv
+ffmpeg -ss 30 -i input.wmv -c copy -t 10 output.wmv
+```
+
+# Reverse video
+
+```
+ffmpeg -i input.mp4 -ss 00:00:17.0 -t 00:00:10.0 -vf reverse output.mp4
+```

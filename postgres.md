@@ -1,3 +1,9 @@
+## Initial Setup
+
+After install, authentication is ident, so you need to `su postgres` then `psql` and set up the new user.
+
+
+
 ## Restart Postgres (on Linux core installation via apt)
 
 ```
@@ -181,6 +187,18 @@ $ sudo -u postgres psql
      $ ...
 ```
 
+For future tables:
+```
+ALTER DEFAULT PRIVILEGES FOR ROLE stock_trend_finder IN SCHEMA public GRANT ALL ON TABLES TO stock_trend_finder;
+```
+
+
+## Change default schema
+
+`ALTER DATABASE flooring_production_backup_20190222 SET search_path TO flooring;`
+
+
+
 ## Importing a table to Rails via COPY trick
 
 [link](https://www.postgresql.org/message-id/5895824A-7DE9-426C-BE09-D81C1F22AFA5%40teksol.info)
@@ -246,6 +264,7 @@ pg_dump -h localhost -p 5432 -a rics_channels_development | psql rics_adapter_de
 
 ## User manipulations
 
+Create user/role: `CREATE ROLE wkotzan WITH CREATEDB LOGIN;` 
 Edit user for login: `ALTER ROLE "railsapp" WITH LOGIN;`
 Remove password requirement: `ALTER ROLE railsapp password null;`
 See user's roles: `\du`

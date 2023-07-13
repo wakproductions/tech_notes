@@ -10,6 +10,8 @@ https://stackoverflow.com/questions/21659637/how-to-fix-sudo-no-tty-present-and-
 https://www.tecmint.com/run-sudo-command-without-password-linux/
 
 ```
+sudo visudo
+
 # Allow members of group sudo to execute any command
 %sudo   ALL=(ALL:ALL) ALL
 deploy_user ALL=(ALL) NOPASSWD: /usr/local/bin/docker-compose
