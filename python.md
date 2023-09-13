@@ -1,3 +1,22 @@
+# Installed on both Windows and WSL independently
+
+## Windows
+https://ianchanning.wordpress.com/2016/03/25/jupyter-on-windows-with-chocolatey/
+
+choco install python
+
+pip install jupyter
+
+
+
+
+
+
+
+
+
+
+
 ## Mac Mojave Install Issue
 ` sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /`
 
