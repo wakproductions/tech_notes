@@ -150,7 +150,7 @@ sudo dseditgroup -o edit -a $username -t user $groupname
 
 List members in group
 ```
- dscacheutil -q group -a name _www 
+dscacheutil -q group -a name _www 
 ```
 
 List groups of user
@@ -256,6 +256,23 @@ To get a file from remote to local (from local terminal):
 $ scp ubuntu@fidb-staging:/mnt/mysql/dump/*_20170320.sql /Users/wkotzan/Development/
 banks_20170320.sql                                                                                                                          100% 2035KB   2.0MB/s   00:01    
 sites_20170320.sql                                                                                                                          100% 4458KB   2.2MB/s   00:02 
+```
+
+## Compression ##
+
+Compress file
+```
+tar -czvf --exclude<pattern> myfile.tar.gz /path/to/directory
+```
+
+See what's in tar
+```
+tar -tvf myfile.tar.gz
+```
+
+Extract
+```
+tar -xf myfile.tar.gz
 ```
 
 
