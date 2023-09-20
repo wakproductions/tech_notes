@@ -1,3 +1,12 @@
+## Disable the annoying IRB autocomplete
+
+```
+Reline.autocompletion = IRB.conf[:USE_AUTOCOMPLETE] = false
+```
+
+
+
+
 ## Change the Logger to STDOUT
 
 ```ruby
