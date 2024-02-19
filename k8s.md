@@ -1,9 +1,23 @@
 # Main components
 https://www.youtube.com/watch?v=Krpb44XR0bk&list=PLy7NrYWoggjziYQIDorlXjTvvwweTYoNC&index=2
 
-Pod (container) > Node <-> Service > Cluster
+# Architecture
+
+* Cluster has one master node, and multiple worker nodes
+* Master node runs (only has to be small instance):
+  - The K8s API server - it's the cluster entry point, hosts/interfaces UI, API, CLI
+  - Controller manager - manages processes, restarting them if the die, etc.
+  - Scheduler - decides which nodes processes should run on based on load
+  - etcd - key/value store DB for the k8s cluster
+  - If the master goes down, the whole cluster becomes unavailable. Need to be backed up, or have a second "backup" instance running
+* Worker nodes (tend to be big instances): run one or more Docker containers for the application(s)
+* Master communicates with workers through a "virtual network"
+
+Pod (container) [runs on]> Node <-> Service > Cluster
 
 Pod
+* Pods each have their own IP address, new IP address given when a pod is restarted.
+* Because the pod IP address can change, there's another layer in between called "service" that has as static IP and acts as a load balancer
 * you'd mainly work with deployments and not pods
 * database can't be replicated for deployment (bottleneck), but k8s StatefulSet is designed for replicating databases and syncing r/w ops (deployment vs statefulset) 
 * 
@@ -127,3 +141,8 @@ $ kubectl edit deployment
 
 #=> shows you auto generated deployment 
 ```
+
+# Other Tools
+
+kubectx - switch context
+kubens - switch namespace
