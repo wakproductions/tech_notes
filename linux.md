@@ -1,6 +1,7 @@
 # Linux Cheat Sheet
 
 ## Winston's New Server Setup Process ##
+* Create winston user as an admin so you don't have to use root
 * Create new user (i.e. deploy)
 * SSH key for deploy from Github on deploy user
 * Add login SSH key
@@ -11,6 +12,14 @@
 * Install NGINX
   - https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
   - Note, not using UFW because iptables is sufficient
+
+## User Management Process Crash Course
+https://www.youtube.com/watch?v=19WOD84JFxA
+
+* See existing users on the system: `cat /etc/passwd`
+  - Use `wc`  to get number of users by lines `cat /etc/passwd | wc -l`
+  - User IDs below 1000 are system accounts
+* Create users `sudo useradd <user>`
 
 
 ## Command line shortcuts ##
@@ -102,6 +111,32 @@ To just stop Apache:
 ```
 sudo systemctl stop apache2.service
 ```
+
+## Configure docker to run without sudo required ##
+https://docs.docker.com/engine/install/linux-postinstall/
+
+```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo usermod -aG docker <desired users>
+```
+
+log out and log back in to initialize new group membership
+
+verify you can run docker without sudo
+```
+docker run hello-world
+```
+
+If you receive this error `WARNING: Error loading config file: /home/user/.docker/config.json -
+stat /home/user/.docker/config.json: permission denied`, you may have to run:
+
+You may have to give permission to the `~/.docker` directory by running:
+```
+sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+sudo chmod g+rwx "$HOME/.docker" -R
+```
+
 
 ## Check Linux Version
 

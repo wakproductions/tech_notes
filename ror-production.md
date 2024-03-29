@@ -43,14 +43,13 @@ Then `sudo service nginx restart`
 
 ### Set up Let's Encrypt
 
-1. Install certbot (https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx)
+1. Install certbot (https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal)
+
+Snapd needs to be installed first
 ```
-$ sudo apt-get update
-$ sudo apt-get install software-properties-common
-$ sudo add-apt-repository universe
-$ sudo add-apt-repository ppa:certbot/certbot
-$ sudo apt-get update
-$ sudo apt-get install certbot python-certbot-nginx 
+$ sudo snap install --classic certbot
+$ sudo ln -s /snap/bin/certbot /usr/bin/certbot
+$ sudo certbot --nginx
 ```
 
 2. Run certbot
