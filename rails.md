@@ -67,3 +67,17 @@ JSON.pretty_generate(my_hash_or_array)
 # Url Helpers
 
 `Rails.application.routes.url_helpers.users_path`
+
+
+# Logging in Ruby on Rails
+
+https://www.honeybadger.io/blog/ruby-logger-lograge/
+Most of the benefits of Logger we’ve seen so far can all be used along with Rails apps. The Rails version of Logger is just a simple extension of Ruby’s native class.
+
+Apart from that, Rails also adds a nice feature to allow devs to broadcast their logs to multiple loggers. Thus, if you want to work with more than one logging library, you can do so within Rails logger:
+
+```ruby
+custom_logger = Logger.new(STDOUT)
+Rails.logger.extend(ActiveSupport::Logger.broadcast(custom_logger))
+This can also be useful when you need some intelligence regarding the places your logs should go. Some parts of your app may need logs in different locations or different formats.
+```
