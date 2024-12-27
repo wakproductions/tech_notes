@@ -378,6 +378,12 @@ none            100M     0  100M   0% /run/user
 /dev/xvdf       3.9T  2.4T  1.4T  64% /mnt/new
 ```
 
+ncdu utility:
+```
+sudo apt install ncdu
+ncdu / --exclude /mnt
+```
+
 ### Folder Size
 
 ```bash
