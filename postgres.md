@@ -328,3 +328,32 @@ $ pg_dump -U username -h hostname databasename > dump.sql
 $ psql -d newdb -f dump.sql
 
 ```
+
+## Kill connections to database
+
+```
+falcondb=> select pid, usename, application_name, client_addr from pg_stat_activity;
+  pid  | usename  |                    application_name                     | client_addr
+-------+----------+---------------------------------------------------------+--------------
+   714 | rdsadmin |                                                         |
+   712 |          |                                                         |
+ 26736 | postgres | Passenger AppPreloader: /var/deploy/backend_app/current | 10.65.11.146
+   718 | rdsadmin | PostgreSQL JDBC Driver                                  |
+   784 | rdsadmin |                                                         |
+ 26627 | postgres | psql                                                    | 10.65.11.146
+ 26831 | postgres | Passenger AppPreloader: /var/deploy/backend_app/current | 10.65.11.146
+   709 |          |                                                         |
+   713 |          |                                                         |
+   708 |          |                                                         |
+   711 |          |                                                         |
+(11 rows)
+
+falcondb=> select pg_terminate_backend(24641) from pg_stat_activity where datname='falcondb';
+WARNING:  PID 24641 is not a PostgreSQL backend process
+WARNING:  PID 24641 is not a PostgreSQL backend process
+ pg_terminate_backend
+----------------------
+ f
+ f
+(2 rows)
+```
