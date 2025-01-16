@@ -429,6 +429,12 @@ $ sudo mount /dev/xvdb /pgdata
 
 ## Processes ##
 
+`ps aux | grep <process name>`
+
+See where a process is running from
+`pwdx <pid>`
+
+
 ## View all background tasks
 ```
 ps -ef
@@ -504,6 +510,35 @@ ssh -L local_port:remote_address:remote_port username@server.com
 Get list of processes
 ```
 systemctl list-unit-files | grep enabled
+
+
+systemctl list-units --type=service --all
+systemctl list-units --type=service --state=running
+
+```
+
+For user level services you gotta add the `--user` flag 
+```
+systemctl --user list-unit-files
+```
+Locations of service configuration that can be run
+* /etc/systemd/system/
+* /usr/lib/systemd/system/
+* /lib/systemd/system/
+* ~/.config/systemd/user (user level services)
+
+
+Useful commands
+```
+systemctl --user start my-service.service
+systemctl --user stop my-service.service
+systemctl --user restart my-service.service
+sudo systemctl daemon-reload
+```
+
+If you encounter any errors or need more detailed output, you can check the logs using journalctl:
+```
+journalctl --user -u <service_name>
 ```
 
 ## IP Tables ##
@@ -577,3 +612,19 @@ date
 Logical Volume Mapping Explained
 https://www.ionos.com/help/server-cloud-infrastructure/server-administration/customise-logical-volume-after-enlarging-the-ssd/logical-volume-manager-lvm-basics/
 
+
+# How to fix known hosts problems
+ssh-keygen -R bitbucket.org
+ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts
+
+
+# WSL Tips
+
+See how much memory is being used
+```
+$ free -h --giga
+               total        used        free      shared  buff/cache   available
+Mem:             16G        1.5G         14G         28M        555M         15G
+Swap:           4.3G          0B        4.3G
+D
+```

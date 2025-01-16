@@ -69,10 +69,24 @@ Part of Python standard library
 
 `poetry init`
 
+### pip
+Freeze current dependency versions:
+```
+pip freeze --all > requirements.txt
+```
+
+
 # Django
 `django-admin startproject <name>`
 `python manage.py run server`
 
+Run migrations
+`python manage.py migrate`
+
+# Django apps (modules)
+
+Create a new app module under the folder 'newapp'
+`python manage.py startapp newapp`
 
 ### Jupyter notebook
 
