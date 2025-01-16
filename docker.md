@@ -52,10 +52,11 @@ https://stackoverflow.com/questions/19234831/where-are-docker-images-stored-on-t
 
 ## Reduce Docker VM Size in Windows WSL
 
-`Optimize-VHD -Path c:\path\to\data.vhdx -Mode Full`
+`Optimize-VHD -Path C:\Users\winston.kotzan\AppData\Local\Docker\wsl\ext4.vhdx -Mode Full`
 
 
-Path to Docker solume is `%LOCALAPPDATA%\Docker\wsl\data\ext4.vhdx`
+Path to Docker volume is `%LOCALAPPDATA%\Docker\wsl\data\ext4.vhdx`
+Path to Docker volume is `C:\Users\winston.kotzan\AppData\Local\Docker\wsl\data`
 
 
 https://dev.to/marzelin/how-to-reduce-size-of-docker-data-volume-in-docker-desktop-for-windows-v2-5d38
