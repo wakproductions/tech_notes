@@ -5,6 +5,10 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-
 
 sudo chmod +x /usr/local/bin/docker-compose
 ```
+## How to exit `docker attach` without shutting down container
+
+`Ctrl+P + Ctrl+Q`
+
 
 ## Clean up temporary shit
 in particular the `/var/lib/docker/overlay2` folder

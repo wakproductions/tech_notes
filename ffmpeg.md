@@ -25,7 +25,8 @@ youtube-dl --recode-video mp4 <url>
 ```
 
 Conversion for Blu-Ray movies to H.265:
-`ffmpeg -i <input_file> -c:v libx265 -b:v 1100k -maxrate 1800k -bufsize 2200k -c:a aac -b:a 320k -c:s copy <output_file>
+`ffmpeg -i <input_file> -c:v libx265 -b:v 1100k -maxrate 1800k -bufsize 2200k -c:a aac -b:a 320k -c:s copy <output_file>`
+`ffmpeg -i <input_file> -c:v libx265 -c:a aac -b:a 320k -c:s copy <output_file>`
 
 For 720p use -b:v of like 1000k
 

@@ -73,8 +73,19 @@ Part of Python standard library
 `django-admin startproject <name>`
 `python manage.py run server`
 
+# pip
+Locks requirements, but lists pretty much everything installed, which might includes some junk.
+```
+pip freeze > requirements.txt
+```
 
-### Jupyter notebook
+More concise way - analyzes the imports for only used deps:
+```
+pip install pipreqs
+pipreqs --force .
+```
+
+# Jupyter notebook
 
 To run jupyter: `jupyter lab` or `jupyter notebook` or `jupyter server` - get the URL from the console output that follows
 
