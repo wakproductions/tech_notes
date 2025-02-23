@@ -3,7 +3,10 @@
 ```
 Reline.autocompletion = IRB.conf[:USE_AUTOCOMPLETE] = false
 ```
-
+~/.irbrc
+```
+`IRB.conf[:USE_AUTOCOMPLETE] = false`
+```
 
 
 
