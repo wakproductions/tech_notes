@@ -24,6 +24,12 @@ ffmpeg -i demo-description-override.mov -i palette.png -filter_complex "fps=10,s
 youtube-dl --recode-video mp4 <url>
 ```
 
+Conversion for Blu-Ray movies to H.265:
+`ffmpeg -i <input_file> -c:v libx265 -b:v 1100k -maxrate 1800k -bufsize 2200k -c:a aac -b:a 320k -c:s copy <output_file>`
+`ffmpeg -i <input_file> -c:v libx265 -c:a aac -b:a 320k -c:s copy <output_file>`
+
+For 720p use -b:v of like 1000k
+
 # Conversions
 
 `
@@ -43,4 +49,11 @@ ffmpeg -ss 30 -i input.wmv -c copy -t 10 output.wmv
 
 ```
 ffmpeg -i input.mp4 -ss 00:00:17.0 -t 00:00:10.0 -vf reverse output.mp4
+```
+
+# Extract Audio
+```
+ffmpeg -i input_video.mp4 -vn -ab 320k -ar 44100 -ac 2 output_audio.mp3
+
+ffmpeg -i TOP\ 20\ SOUND\ EFFECTS\ YOUTUBERS\ USE\ IN\ 2022\ \(ROYALTY\ FREE\)\ \[V0Dbq0OfxnU\].mkv -c:a copy "TOP 20 SOUND EFFECTS YOUTUBERS USE IN 2022 (ROYALTY FREE) [V0Dbq0OfxnU].opus"
 ```

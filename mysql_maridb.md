@@ -1,3 +1,6 @@
+# Check Version
+`mysqld --version`
+
 # Users
 
 ### Logging in

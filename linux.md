@@ -304,7 +304,7 @@ sites_20170320.sql                                                              
 
 Compress file
 ```
-tar -czvf --exclude<pattern> myfile.tar.gz /path/to/directory
+tar --exclude<pattern> -czvf myfile.tar.gz /path/to/directory
 ```
 
 See what's in tar

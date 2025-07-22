@@ -1,0 +1,1 @@
+[JWT authentication in Rails](https://gist.github.com/jesster2k10/e626ee61d678350a21a9d3e81da2493e)

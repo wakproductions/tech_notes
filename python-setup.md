@@ -93,6 +93,17 @@ pip freeze --all > requirements.txt
 `django-admin startproject <name>`
 `python manage.py run server`
 
+# pip
+Locks requirements, but lists pretty much everything installed, which might includes some junk.
+```
+pip freeze > requirements.txt
+```
+
+More concise way - analyzes the imports for only used deps:
+```
+pip install pipreqs
+pipreqs --force .
+```
 Run migrations
 `python manage.py migrate`
 
@@ -101,7 +112,7 @@ Run migrations
 Create a new app module under the folder 'newapp'
 `python manage.py startapp newapp`
 
-### Jupyter notebook
+# Jupyter notebook
 
 To run jupyter: `jupyter lab` or `jupyter notebook` or `jupyter server` - get the URL from the console output that follows
 
