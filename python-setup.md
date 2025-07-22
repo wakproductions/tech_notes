@@ -11,6 +11,19 @@ pip install jupyter
 
 Install using pyenv
 
+### Upgrade pyenv
+
+```
+cd ~/.pyenv
+git pull
+
+pyenv update
+
+pyenv install --list
+
+
+```
+
 # Typical pyenv setup
 
 https://www.youtube.com/watch?v=gIo22v3BIh8

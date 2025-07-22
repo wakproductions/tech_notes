@@ -147,6 +147,8 @@ cat /etc/debain_version
 cat /etc/os-release
 ```
 
+## Lost input STDIN
+
 
 
 ### Install NGINX to proxy SSL
@@ -191,6 +193,11 @@ dscacheutil -q group -a name _www
 List groups of user
 ```
 id -Gn  $username
+```
+
+See all groups
+```
+cat /etc/group
 ```
 
 

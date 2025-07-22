@@ -10,6 +10,7 @@ shell> mysql -u <user> -p<password> db_name
 ```
 desc mysql.user;
 select host, user from mysql.user\G
+SELECT User, Host FROM mysql.user WHERE User = 'humhub';
 
 create 'webapp'@'%' identified by '<password>';
 ```

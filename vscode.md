@@ -1,0 +1,1 @@
+Find the currently open file in the Explorer Pane: `Ctrl+Shift+E`

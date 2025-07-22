@@ -8,6 +8,12 @@ Reline.autocompletion = IRB.conf[:USE_AUTOCOMPLETE] = false
 `IRB.conf[:USE_AUTOCOMPLETE] = false`
 ```
 
+# Update the version of bundler
+
+```
+bundle update --bundler
+```
+
 
 
 ## Change the Logger to STDOUT
