@@ -86,6 +86,10 @@ JSON.pretty_generate(my_hash_or_array)
 
 `Rails.application.routes.url_helpers.users_path`
 
+# Quit generating rspec helpers
+
+
+
 
 # Logging in Ruby on Rails
 
