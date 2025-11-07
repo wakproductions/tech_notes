@@ -13,8 +13,10 @@ shell> mysql -u <user> -p<password> db_name
 ```
 desc mysql.user;
 select host, user from mysql.user\G
+SELECT User, Host FROM mysql.user WHERE User = 'humhub';
 
-create 'webapp'@'%' identified by '<password>';
+create  user 'webapp'@'%' identified by '<password>';
+CREATE USER 'genexus'@'%' IDENTIFIED BY 'mysql123';
 ```
 
 # Databases
@@ -30,6 +32,10 @@ Make a database
 ```
 create database mydatabase;
 GRANT ALL ON mydatabase.* TO 'your_mysql_name'@'your_client_host';
+
+CREATE DATABASE IF NOT EXISTS echartpro_development;
+GRANT ALL ON echartpro_development.* TO 'genexus'@'localhost';
+GRANT ALL ON echartpro_development.* TO 'genexus'@'%';
 ```
 
 See the current database

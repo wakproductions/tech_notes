@@ -8,6 +8,12 @@ Reline.autocompletion = IRB.conf[:USE_AUTOCOMPLETE] = false
 `IRB.conf[:USE_AUTOCOMPLETE] = false`
 ```
 
+# Update the version of bundler
+
+```
+bundle update --bundler
+```
+
 
 
 ## Change the Logger to STDOUT
@@ -79,6 +85,10 @@ JSON.pretty_generate(my_hash_or_array)
 # Url Helpers
 
 `Rails.application.routes.url_helpers.users_path`
+
+# Quit generating rspec helpers
+
+
 
 
 # Logging in Ruby on Rails
