@@ -7,6 +7,15 @@ https://github.com/sidekiq/sidekiq/wiki/API
 require 'sidekiq/api'
 Sidekiq::Queue.new('sidekiq_low').size
 
+
+# For default queue
+queue = Sidekiq::Queue.new
+queue.size  # Returns the number of jobs in the default queue
+
+# For a specific queue named "mailer"
+mailer_queue = Sidekiq::Queue.new("mailer")
+mailer_queue.size  # Returns the number of jobs in the mailer queue
+
 ```
 
 ### Run Sidekiq
