@@ -15,7 +15,7 @@ desc mysql.user;
 select host, user from mysql.user\G
 SELECT User, Host FROM mysql.user WHERE User = 'humhub';
 
-create  user 'webapp'@'%' identified by '<password>';
+create user 'webapp'@'%' identified by '<password>';
 CREATE USER 'genexus'@'%' IDENTIFIED BY 'mysql123';
 ```
 
