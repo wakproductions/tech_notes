@@ -256,6 +256,9 @@ grep -rnw '/path/to/somewhere/' -e "pattern"
 
 `find /dir/path/look/up -name "pattern"`
 
+Find directory, name like "presenter" `find . -type d -iname "presenter*"`
+
+
 To search a compressed text file, use `zgrep`
 
 ```zgrep a7505707-1224-483b-93f9-aa150175fd8b *```
@@ -314,7 +317,7 @@ tar -tvf myfile.tar.gz
 
 Extract
 ```
-tar -xf myfile.tar.gz
+
 ```
 
 
