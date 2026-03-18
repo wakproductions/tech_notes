@@ -26,3 +26,9 @@ Make it remember something
 ```
 # Always do xyz
 ```
+
+### Add MCP server
+`claude mcp add context7 --scope global -- npx -y @upstash/context7-mcpclaude`
+
+Creates configuration in `./.mcp.json`
+

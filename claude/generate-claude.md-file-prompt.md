@@ -13,6 +13,8 @@ Structure it as:
 * Additional documentation files Claude should check when relevant
 
 Additionally, extract patterns you observe into separate files:
-.claude/docs/architectural_patterns.md - document the architectural patterns, design decisions, and conventions used
+* .claude/docs/architectural_patterns.md - document the architectural patterns, design decisions, and conventions used
 (e.g. dependency injection, state management, API design patterns). Make sure these are patterns that appear in 
 multiple files. Reference these files in the CLAUDE.md's "Additional Documentation" section.
+
+Don't list out information such as the values of enumerations or constants. Just mention the field or variable names when relevant. 

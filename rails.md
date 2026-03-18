@@ -32,6 +32,23 @@ $ kill -9 702
 ```
 
 
+## ActiveJob
+
+Sidekiq
+```
+ActiveJob::Base.queue_adapter.enqueued_jobs
+ActiveJob::Base.queue_adapter.enqueued_jobs.select { |j| j[:job] == MyJobClass }
+```
+
+Solid Queue (solid_queue)
+```
+SolidQueue::Job.where(finished_at: nil)
+SolidQueue::ReadyExecution.all
+
+# see failed
+SolidQueue::FailedExecution.all
+```
+
 
 ## Ruby $ global variables
 

@@ -1,5 +1,16 @@
 # Linux Cheat Sheet
 
+# Linux terminal no longer echoing keyboard output to the screen
+
+`stty echo`
+
+If you also find that characters only appear after pressing Enter, add canonical mode back too:
+
+```bash
+stty sane
+# or, more explicitly:
+stty echo icanon
+```
 ## Winston's New Server Setup Process ##
 * Create winston user as an admin so you don't have to use root
 * Create new user (i.e. deploy)
