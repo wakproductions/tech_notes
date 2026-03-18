@@ -53,11 +53,13 @@ $ sudo certbot --nginx
 ```
 
 2. Run certbot
-sudo certbot --nginx -d ustreasuryyieldcurve.com -d www.ustreasuryyieldcurve.com
+`sudo certbot --nginx -d ustreasuryyieldcurve.com -d www.ustreasuryyieldcurve.com`
 
 Crontab for renewal:
+```
 sudo crontab -e
 * 2 * * 7 /opt/letsencrypt/letsencrypt-auto renew >> /var/log/le-renew.logmixed
+```
 This will automatically renew the SSL certificate at 2AM every Sunday. (not the right command - gotta update)
 
 ## Nokogiri Install Problems

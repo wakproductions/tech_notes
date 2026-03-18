@@ -478,6 +478,19 @@ pkill -f processname
 kill -9 <pid>
 ```
 
+### Kill user sessions
+```
+deploy@localhost:~$ who
+deploy   pts/0        2026-01-15 23:10 (86.48.9.129)
+deploy   pts/1        2026-01-15 23:19 (97.149.132.151)
+deploy@localhost:~$ tty
+/dev/pts/1
+deploy@localhost:~$ sudo pkill -9 -t pts/0
+sudo: unable to execute /usr/bin/pkill: Connection reset by peer
+deploy@localhost:~$ who
+deploy   pts/1        2026-01-15 23:19 (97.149.132.151)
+
+```
 
 ## Network Operations ##
 
